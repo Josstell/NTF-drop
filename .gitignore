@@ -5,8 +5,11 @@
 /.pnp
 .pnp.js
 
+/sanity/node_modules
+
 # testing
 /coverage
+
 
 # next.js
 /.next/

@@ -78,21 +78,7 @@ function NFTDropPage({ collection }: Props) {
         const receipt = tx[0].receipt // transaction receiptn
         const claimedTokenId = tx[0].id
         const claimedNFT = await tx[0].data()
-        toast('ouppss... Something  went wrong!', {
-          duration: 8000,
-          style: {
-            background: 'white',
-            color: 'red',
-            fontWeight: 'bolder',
-            fontSize: '17px',
-            padding: '20px',
-          },
-        })
-        console.log(receipt)
-        console.log(claimedTokenId)
-        console.log(claimedNFT)
-      })
-      .catch((err) => {
+
         toast('HOORAY... You successfully Minted!', {
           duration: 8000,
           style: {
@@ -103,7 +89,18 @@ function NFTDropPage({ collection }: Props) {
             padding: '20px',
           },
         })
-        console.log(err)
+      })
+      .catch((err) => {
+        toast('ouppss... Something  went wrong!', {
+          duration: 8000,
+          style: {
+            background: 'white',
+            color: 'red',
+            fontWeight: 'bolder',
+            fontSize: '17px',
+            padding: '20px',
+          },
+        })
       })
       .finally(() => {
         setLoading(false)
